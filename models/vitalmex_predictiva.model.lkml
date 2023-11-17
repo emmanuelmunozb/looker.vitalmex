@@ -32,3 +32,4 @@ explore: vitalmex_prediccion_ran_for_reg {}
 
 explore: vitalmex_prediccion_dnn_l_r {}
 
+explore: vitalmex_prediccion_2021_2028_dnn {}

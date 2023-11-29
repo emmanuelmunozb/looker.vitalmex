@@ -9,9 +9,19 @@ view: vitalmex_prediccion_2010_2028_dnn {
     drill_fields: [detail*]
   }
 
-  dimension: predicted_volumen {
-    type: number
+  measure: pob {
+    type: sum
+    sql: ${TABLE}.pob ;;
+  }
+
+  measure: predicted_volumen {
+    type: sum
     sql: ${TABLE}.predicted_volumen ;;
+  }
+
+  measure: egresos {
+    type: sum
+    sql: ${TABLE}.egresos ;;
   }
 
   dimension: anio {
@@ -54,19 +64,9 @@ view: vitalmex_prediccion_2010_2028_dnn {
     sql: ${TABLE}.fuente ;;
   }
 
-  dimension: egresos {
-    type: number
-    sql: ${TABLE}.egresos ;;
-  }
-
   dimension: ciclo_vida {
     type: string
     sql: ${TABLE}.ciclo_vida ;;
-  }
-
-  dimension: pob {
-    type: number
-    sql: ${TABLE}.pob ;;
   }
 
   dimension: entidad {
@@ -82,19 +82,19 @@ view: vitalmex_prediccion_2010_2028_dnn {
   set: detail {
     fields: [
         predicted_volumen,
-	anio,
-	clues,
-	cie10,
-	cie9,
-	sexo,
-	edad,
-	dias_e,
-	fuente,
-	egresos,
-	ciclo_vida,
-	pob,
-	entidad,
-	pro_nombre
+  anio,
+  clues,
+  cie10,
+  cie9,
+  sexo,
+  edad,
+  dias_e,
+  fuente,
+  egresos,
+  ciclo_vida,
+  pob,
+  entidad,
+  pro_nombre
     ]
   }
 }

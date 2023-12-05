@@ -3,6 +3,8 @@ connection: "vitalmex_predictiva"
 # include all the views
 include: "/views/**/*.view.lkml"
 
+include: "/**/*.dashboard"
+
 datagroup: vitalmex_predictiva_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
@@ -33,3 +35,5 @@ explore: vitalmex_prediccion_ran_for_reg {}
 explore: vitalmex_prediccion_dnn_l_r {}
 
 explore: vitalmex_prediccion_2021_2028_dnn {}
+
+explore: vitalmex_prediccion_2010_2028_dnn {}
